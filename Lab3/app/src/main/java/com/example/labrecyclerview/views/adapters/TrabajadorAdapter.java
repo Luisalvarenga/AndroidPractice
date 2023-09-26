@@ -31,7 +31,7 @@ public class TrabajadorAdapter extends RecyclerView.Adapter<ViewHolderTrabajador
 
         holder.getCodigoPersona().setText(String.valueOf(datos.get(position).getCodigoPersona()));
         holder.getNombrePersona().setText(datos.get(position).getNombrePersona() + " " + datos.get(position).getApellidoPersona());
-        holder.getTipoTrabajador().setText(datos.get(position).getTipoTrabajador() == 1? "TP" : "TB" );
+        holder.getTipoTrabajador().setText(datos.get(position).getTipoTrabajador() == 1? "TC" : "TH" );
         holder.getTotalPagar().setText(Float.toString(datos.get(position).getTotalPagar()));
     }
     @Override
