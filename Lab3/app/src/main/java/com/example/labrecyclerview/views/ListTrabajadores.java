@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.labrecyclerview.R;
 import com.example.labrecyclerview.models.Trabajador;
@@ -15,7 +16,7 @@ import com.example.labrecyclerview.views.adapters.TrabajadorAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListTrabajadores extends AppCompatActivity {
+public class ListTrabajadores extends AppCompatActivity implements  TrabajadorAdapter.OnItemClickListener{
 
     private TrabajadorAdapter personaAdapter;
     private RecyclerView recyclerView;
@@ -30,12 +31,17 @@ public class ListTrabajadores extends AppCompatActivity {
         List<Trabajador> listaTrabajadores = dbSource.getAllListTrabajadores();
 
         // Configurando adaptador
-        personaAdapter = new TrabajadorAdapter((ArrayList<Trabajador>) listaTrabajadores);
+        personaAdapter = new TrabajadorAdapter((ArrayList<Trabajador>) listaTrabajadores, ListTrabajadores.this);
         layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.rcvTrabajadores);
         recyclerView.setAdapter(personaAdapter);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
+    }
+
+    @Override
+    public void onItemClick(Trabajador persona) {
+        Toast.makeText(this, "Esta es un prueba", Toast.LENGTH_SHORT).show();
     }
 }

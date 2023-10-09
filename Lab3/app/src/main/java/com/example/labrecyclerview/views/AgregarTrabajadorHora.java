@@ -13,15 +13,11 @@ import com.example.labrecyclerview.R;
 import com.example.labrecyclerview.models.TrabajadorHora;
 import com.example.labrecyclerview.repositories.TrabajadorRespository;
 import com.example.labrecyclerview.services.ServiceLocator;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class AgregarTrabajadorHora extends AppCompatActivity {
 
-    EditText etId;
-    EditText etNombre;
-    EditText etApellido;
-    EditText etEdad;
-    EditText etValor;
-    EditText etHoras;
+    TextInputEditText etId, etNombre, etApellido, etEdad, etValor, etHoras;
     Button btnAgregarTH;
 
     @Override
