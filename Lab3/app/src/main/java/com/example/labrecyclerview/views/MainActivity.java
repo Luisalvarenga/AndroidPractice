@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.labrecyclerview.R;
+import com.example.labrecyclerview.databinding.ActivityListTrabajadoresBinding;
+import com.example.labrecyclerview.databinding.ActivityMainBinding;
 import com.example.labrecyclerview.models.Trabajador;
 import com.example.labrecyclerview.repositories.TrabajadorRespository;
 import com.example.labrecyclerview.services.ServiceLocator;
@@ -20,29 +22,27 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnAcerca;
-    private Button btnMostrar;
-    private Button btnAgregarTrabajador;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        btnAcerca = findViewById(R.id.btnAcerca);
-        btnAgregarTrabajador = findViewById(R.id.btnAgregarTrabajador);
-        btnMostrar = findViewById(R.id.btnMostrar);
+        // Configuracion de viewbinding
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        btnAgregarTrabajador.setOnClickListener(v -> {
+        binding.btnAgregarTrabajador.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SelectTipoTrabajador.class));
         });
 
-        btnMostrar.setOnClickListener(v -> {
+        binding.btnMostrar.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, ListTrabajadores.class));
             //ok
 
         });
-        btnAcerca.setOnClickListener(new View.OnClickListener(){
+        binding.btnAcerca.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
