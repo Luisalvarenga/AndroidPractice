@@ -19,7 +19,7 @@ import com.example.labrecyclerview.views.adapters.TrabajadorAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListTrabajadores extends AppCompatActivity implements  TrabajadorAdapter.OnItemClickListener{
+public class ListTrabajadores extends AppCompatActivity implements TrabajadorAdapter.OnItemClickListener{
 
     private ActivityListTrabajadoresBinding binding;
     private TrabajadorAdapter personaAdapter;
